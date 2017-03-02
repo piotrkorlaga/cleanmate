@@ -1,0 +1,24 @@
+<!--
+  Generated template for the Category page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{category.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item class="text" *ngFor="let duty of (fbCategory| async).duties | entries">
+      <h1>{{duty.value.name}} </h1>
+    </ion-item>
+  </ion-list>
+  <button ion-button (click)="addNewDuty()" block outline>NEW</button>
+</ion-content>
